@@ -1,3 +1,8 @@
+/*
+  Film Grain Effect by Doug Avery
+  https://www.viget.com/articles/film-grain-effect/
+  https://codepen.io/averyvery/pen/ajrzk
+*/
 @keyframes grain {
   0%, 100% {
     transform: translate(0, 0);
