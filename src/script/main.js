@@ -219,131 +219,131 @@ window.addEventListener( 'scroll', startMusic );
 document.addEventListener( 'click', startMusic );
 
 // Language
-var $language = document.getElementById( 'language' );
-var $brandName = document.getElementById( 'brand-name' );
-var $branchName = document.getElementById( 'branch-name' );
-var $motivationNihongo = document.getElementById( 'motivation-nihongo' );
-var $motivationEigo = document.getElementById( 'motivation-eigo' );
-var $currentTimeText = document.getElementById( 'current-time-text' );
-var $yearKanji = document.getElementById( 'year-kanji' );
-var $monthKanji = document.getElementById( 'month-kanji' );
-var $dayKanji = document.getElementById( 'day-kanji' );
-var $hourKanji = document.getElementById( 'hour-kanji' );
-var $minuteKanji = document.getElementById( 'minute-kanji' );
-var $secondsKanji = document.getElementById( 'seconds-kanji' );
-var $amNihongo = document.getElementById( 'am-nihongo' );
-var $pmNihongo = document.getElementById( 'pm-nihongo' );
-var $amEigo = document.getElementById( 'am-eigo' );
-var $pmEigo = document.getElementById( 'pm-eigo' );
-var $visaResources = document.getElementById( 'visa-resources' );
-var $middleDot = document.getElementById( 'middle-dot' );
-var $title = document.querySelector( 'title' );
-
-var lang = {
-  "BRAND_NAME": {
-    "ja": "レッドブルー",
-    "en": "RedBlue"
-  },
-  "BRANCH_NAME": {
-    "ja": "東京支社",
-    "en": "Tokyo Branch"
-  },
-  "CURRENT_TIME": {
-    "ja": "東京での現在時刻：",
-    "en": "Current time in Tokyo:"
-  },
-  "YEAR_KANJI": {
-    "ja": "年",
-    "en": "-"
-  },
-  "MONTH_KANJI": {
-    "ja": "月",
-    "en": "-"
-  },
-  "DAY_KANJI": {
-    "ja": "日",
-    "en": ""
-  },
-  "HOUR_KANJI": {
-    "ja": "時",
-    "en": ":"
-  },
-  "MINUTE_KANJI": {
-    "ja": "分",
-    "en": ":"
-  },
-  "SECONDS_KANJI": {
-    "ja": "秒",
-    "en": ""
-  },
-  "VISA_RESOURCES": {
-    "ja": "ビザのリソース",
-    "en": "Visa Resources"
-  },
-  "MIDDLE_DOT": {
-    "ja": "・",
-    "en": " · "
-  }
-};
-
-lang.TITLE = {
-  "ja": lang.BRAND_NAME.ja + lang.MIDDLE_DOT.ja + lang.BRANCH_NAME.ja,
-  "en": lang.BRAND_NAME.en + lang.MIDDLE_DOT.en + lang.BRANCH_NAME.en
-};
-
-$language.addEventListener( 'click', function ( event ) {
-  event.preventDefault();
-
-  var $clicked = event.target;
-  ( $clicked.nextElementSibling || $clicked.previousElementSibling ).classList.remove( 'active' );
-  $clicked.classList.add( 'active' );
-
-  switch ( $clicked.textContent ) {
-    case '🇯🇵':
-      $html.setAttribute( 'lang', 'ja' );
-      $html.setAttribute( 'xml:lang', 'ja' );
-      $title
-      $brandName.textContent = lang.BRAND_NAME.ja;
-      $branchName.textContent = lang.BRANCH_NAME.ja;
-      $currentTimeText.textContent = lang.CURRENT_TIME.ja;
-      $yearKanji.textContent = lang.YEAR_KANJI.ja;
-      $monthKanji.textContent = lang.MONTH_KANJI.ja;
-      $dayKanji.textContent = lang.DAY_KANJI.ja;
-      $hourKanji.textContent = lang.HOUR_KANJI.ja;
-      $minuteKanji.textContent = lang.MINUTE_KANJI.ja;
-      $secondsKanji.textContent = lang.SECONDS_KANJI.ja;
-      $visaResources.textContent = lang.VISA_RESOURCES.ja;
-      $middleDot.textContent = lang.MIDDLE_DOT.ja;
-      $title.textContent = lang.TITLE.ja;
-      $motivationEigo.hidden = true;
-      $motivationNihongo.hidden = false;
-      $amEigo.hidden = true;
-      $amNihongo.hidden = false;
-      $pmEigo.hidden = true;
-      $pmNihongo.hidden = false;
-    break;
-
-    case '🇺🇸':
-      $html.setAttribute( 'lang', 'en' );
-      $html.setAttribute( 'xml:lang', 'en' );
-      $brandName.textContent = lang.BRAND_NAME.en;
-      $branchName.textContent = lang.BRANCH_NAME.en;
-      $currentTimeText.textContent = lang.CURRENT_TIME.en;
-      $yearKanji.textContent = lang.YEAR_KANJI.en;
-      $monthKanji.textContent = lang.MONTH_KANJI.en;
-      $dayKanji.textContent = lang.DAY_KANJI.en;
-      $hourKanji.textContent = lang.HOUR_KANJI.en;
-      $minuteKanji.textContent = lang.MINUTE_KANJI.en;
-      $secondsKanji.textContent = lang.SECONDS_KANJI.en;
-      $visaResources.textContent = lang.VISA_RESOURCES.en;
-      $middleDot.textContent = lang.MIDDLE_DOT.en;
-      $title.textContent = lang.TITLE.en;
-      $motivationEigo.hidden = false;
-      $motivationNihongo.hidden = true;
-      $amEigo.hidden = false;
-      $amNihongo.hidden = true;
-      $pmEigo.hidden = false;
-      $pmNihongo.hidden = true;
-    break;
-  }
-} )
+// var $language = document.getElementById( 'language' );
+// var $brandName = document.getElementById( 'brand-name' );
+// var $branchName = document.getElementById( 'branch-name' );
+// var $motivationNihongo = document.getElementById( 'motivation-nihongo' );
+// var $motivationEigo = document.getElementById( 'motivation-eigo' );
+// var $currentTimeText = document.getElementById( 'current-time-text' );
+// var $yearKanji = document.getElementById( 'year-kanji' );
+// var $monthKanji = document.getElementById( 'month-kanji' );
+// var $dayKanji = document.getElementById( 'day-kanji' );
+// var $hourKanji = document.getElementById( 'hour-kanji' );
+// var $minuteKanji = document.getElementById( 'minute-kanji' );
+// var $secondsKanji = document.getElementById( 'seconds-kanji' );
+// var $amNihongo = document.getElementById( 'am-nihongo' );
+// var $pmNihongo = document.getElementById( 'pm-nihongo' );
+// var $amEigo = document.getElementById( 'am-eigo' );
+// var $pmEigo = document.getElementById( 'pm-eigo' );
+// var $visaResources = document.getElementById( 'visa-resources' );
+// var $middleDot = document.getElementById( 'middle-dot' );
+// var $title = document.querySelector( 'title' );
+//
+// var lang = {
+//   "BRAND_NAME": {
+//     "ja": "レッドブルー",
+//     "en": "RedBlue"
+//   },
+//   "BRANCH_NAME": {
+//     "ja": "東京支社",
+//     "en": "Tokyo Branch"
+//   },
+//   "CURRENT_TIME": {
+//     "ja": "東京での現在時刻：",
+//     "en": "Current time in Tokyo:"
+//   },
+//   "YEAR_KANJI": {
+//     "ja": "年",
+//     "en": "-"
+//   },
+//   "MONTH_KANJI": {
+//     "ja": "月",
+//     "en": "-"
+//   },
+//   "DAY_KANJI": {
+//     "ja": "日",
+//     "en": ""
+//   },
+//   "HOUR_KANJI": {
+//     "ja": "時",
+//     "en": ":"
+//   },
+//   "MINUTE_KANJI": {
+//     "ja": "分",
+//     "en": ":"
+//   },
+//   "SECONDS_KANJI": {
+//     "ja": "秒",
+//     "en": ""
+//   },
+//   "VISA_RESOURCES": {
+//     "ja": "ビザのリソース",
+//     "en": "Visa Resources"
+//   },
+//   "MIDDLE_DOT": {
+//     "ja": "・",
+//     "en": " · "
+//   }
+// };
+//
+// lang.TITLE = {
+//   "ja": lang.BRAND_NAME.ja + lang.MIDDLE_DOT.ja + lang.BRANCH_NAME.ja,
+//   "en": lang.BRAND_NAME.en + lang.MIDDLE_DOT.en + lang.BRANCH_NAME.en
+// };
+//
+// $language.addEventListener( 'click', function ( event ) {
+//   event.preventDefault();
+//
+//   var $clicked = event.target;
+//   ( $clicked.nextElementSibling || $clicked.previousElementSibling ).classList.remove( 'active' );
+//   $clicked.classList.add( 'active' );
+//
+//   switch ( $clicked.textContent ) {
+//     case '🇯🇵':
+//       $html.setAttribute( 'lang', 'ja' );
+//       $html.setAttribute( 'xml:lang', 'ja' );
+//       $title
+//       $brandName.textContent = lang.BRAND_NAME.ja;
+//       $branchName.textContent = lang.BRANCH_NAME.ja;
+//       $currentTimeText.textContent = lang.CURRENT_TIME.ja;
+//       $yearKanji.textContent = lang.YEAR_KANJI.ja;
+//       $monthKanji.textContent = lang.MONTH_KANJI.ja;
+//       $dayKanji.textContent = lang.DAY_KANJI.ja;
+//       $hourKanji.textContent = lang.HOUR_KANJI.ja;
+//       $minuteKanji.textContent = lang.MINUTE_KANJI.ja;
+//       $secondsKanji.textContent = lang.SECONDS_KANJI.ja;
+//       $visaResources.textContent = lang.VISA_RESOURCES.ja;
+//       $middleDot.textContent = lang.MIDDLE_DOT.ja;
+//       $title.textContent = lang.TITLE.ja;
+//       $motivationEigo.hidden = true;
+//       $motivationNihongo.hidden = false;
+//       $amEigo.hidden = true;
+//       $amNihongo.hidden = false;
+//       $pmEigo.hidden = true;
+//       $pmNihongo.hidden = false;
+//     break;
+//
+//     case '🇺🇸':
+//       $html.setAttribute( 'lang', 'en' );
+//       $html.setAttribute( 'xml:lang', 'en' );
+//       $brandName.textContent = lang.BRAND_NAME.en;
+//       $branchName.textContent = lang.BRANCH_NAME.en;
+//       $currentTimeText.textContent = lang.CURRENT_TIME.en;
+//       $yearKanji.textContent = lang.YEAR_KANJI.en;
+//       $monthKanji.textContent = lang.MONTH_KANJI.en;
+//       $dayKanji.textContent = lang.DAY_KANJI.en;
+//       $hourKanji.textContent = lang.HOUR_KANJI.en;
+//       $minuteKanji.textContent = lang.MINUTE_KANJI.en;
+//       $secondsKanji.textContent = lang.SECONDS_KANJI.en;
+//       $visaResources.textContent = lang.VISA_RESOURCES.en;
+//       $middleDot.textContent = lang.MIDDLE_DOT.en;
+//       $title.textContent = lang.TITLE.en;
+//       $motivationEigo.hidden = false;
+//       $motivationNihongo.hidden = true;
+//       $amEigo.hidden = false;
+//       $amNihongo.hidden = true;
+//       $pmEigo.hidden = false;
+//       $pmNihongo.hidden = true;
+//     break;
+//   }
+// } )
