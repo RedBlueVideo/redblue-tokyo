@@ -18,6 +18,7 @@
   </head>
   <body>
     <div class="shading">
+      <button id="volume" class="volume" data-playing-icon="🔊" data-muted-icon="🔇">🔇</button>
       <nav>
         <input id="checkbox" class="checkbox" type="checkbox" />
         <label
@@ -45,7 +46,7 @@
         </div>
       </nav>
       <main>
-        <img src="img/redblue-logo--1024-transparent-dropshadow.png" width="192" alt="ロゴ" />
+        <img id="logo" class="logo" src="img/redblue-logo--1024-transparent-dropshadow.png" width="192" alt="ロゴ" />
         <h1><span class="brand-name">レッドブルー</span><span class="middle-dot">・</span><span class="toukyou-shisha">東京支社</span></h1>
         <p class="motivation"><span><span class="wordwrap">いつか、</span><span class="wordwrap">この</span><span class="wordwrap">夢は</span><span class="wordwrap">本当に</span><span class="wordwrap">なるでしょうよ。</span></span></p>
         <!-- <p class="motivation">いつか、この夢は本当になりますよ。</p> -->
@@ -60,7 +61,7 @@
         </p>
       </footer>
     </div>
-    <audio autoplay loop src="audio/Tatsuro Yamashita - Someday.mp3"></audio>
+    <audio id="someday" autoplay muted loop src="audio/Tatsuro Yamashita - Someday.mp3"></audio>
     <script src="script/main.js"></script>
   </body>
 </html>

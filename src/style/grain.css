@@ -41,7 +41,7 @@ main > * {
 }
 
 main:after {
-  opacity: 0.5;
+  opacity: 0.75;
   -webkit-animation: grain 5s steps(10) infinite;
   -moz-animation: grain 5s steps(10) infinite;
   -ms-animation: grain 5s steps(10) infinite;
