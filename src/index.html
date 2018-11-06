@@ -19,6 +19,10 @@
   <body>
     <div class="shading">
       <button id="volume" class="volume" data-playing-icon="🔊" data-muted-icon="🔇" tabindex="0">🔇</button>
+      <div id="language" class="language">
+        <a class="active" href="/ja">🇯🇵</a>
+        <a href="/en">🇺🇸</a>
+      </div>
       <nav>
         <input id="checkbox" class="checkbox" type="checkbox" />
         <label
@@ -37,7 +41,7 @@
           </span>
         </label>
         <div id="tray" class="tray" aria-hidden="true">
-          <h2>ビザのリソース</h2>
+          <h2 id="visa-resources">ビザのリソース</h2>
           <ul id="tray-links" class="tray-links">
             <li><a href="https://asia.nikkei.com/Japan-Update/Japan-eyes-startup-visa-program-to-lure-foreign-businesses" target="_blank" rel="noopener">Japan eyes startup visa program to lure foreign businesses</a></li>
             <!-- <li><a>Bar</a></li> -->
@@ -48,16 +52,26 @@
       <!-- <img id="godzilla" class="godzilla" src="img/godzilla.png" width="64" alt="ゴジラ" /> -->
       <main>
         <img id="logo" class="logo" src="img/redblue-logo--1024-transparent-dropshadow.png" width="192" alt="ロゴ" />
-        <h1><span class="brand-name">レッドブルー</span><span class="middle-dot">・</span><span class="toukyou-shisha">東京支社</span></h1>
-        <p class="motivation"><span><span class="wordwrap">いつか、</span><span class="wordwrap">この</span><span class="wordwrap">夢は</span><span class="wordwrap">本当に</span><span class="wordwrap">なるでしょうよ。</span></span></p>
+        <h1><span id="brand-name" class="brand-name">レッドブルー</span><span id="middle-dot" class="middle-dot">・</span><span id="branch-name" class="toukyou-shisha">東京支社</span></h1>
+        <p id="motivation-nihongo" class="motivation"><span><span id="itsuka" class="wordwrap">いつか、</span><span id="kono" class="wordwrap">この</span><span id="yume-ha" class="wordwrap">夢は</span><span id="hontou-ni" class="wordwrap">本当に</span><span id="naru-deshou-yo" class="wordwrap">なるでしょうよ。</span></span></p>
         <!-- <p class="motivation">いつか、この夢は本当になりますよ。</p> -->
+        <p id="motivation-eigo" class="motivation" hidden>Someday, this dream will come true.</p>
       </main>
       <footer>
-        <p id="current-time" class="current-time" style="opacity: 0; transition: 1s ease opacity;">東京での現在時刻：
+        <p id="current-time" class="current-time" style="opacity: 0; transition: 1s ease opacity;">
+          <span id="current-time-text">東京での現在時刻：</span>
           <time id="datetime" datetime="">
             <span></span>
-            <span id="year"></span>年<span id="month"></span>月<span id="day"></span>日
-            <span id="hour"></span>時<span id="minutes"></span>分<span id="seconds"></span>秒 <span id="am" hidden><ruby>午前<rt>ごぜん</rt></ruby></span><span id="pm" hidden><ruby>午後<rt>ごご</rt></ruby></span>
+            <span id="year"></span><span id="year-kanji">年</span><span id="month"></span><span id="month-kanji">月</span><span id="day"></span><span id="day-kanji">日</span>
+            <span id="hour"></span><span id="hour-kanji">時</span><span id="minutes"></span><span id="minute-kanji">分</span><span id="seconds"></span><span id="seconds-kanji">秒</span>
+            <span id="am" hidden>
+              <ruby id="am-nihongo">午前<rt>ごぜん</rt></ruby>
+              <abbr id="am-eigo" hidden>PM</abbr>
+            </span>
+            <span id="pm" hidden>
+              <ruby id="pm-nihongo">午後<rt>ごご</rt></ruby>
+              <abbr id="pm-eigo" hidden>PM</abbr>
+            </span>
           </time>
         </p>
       </footer>

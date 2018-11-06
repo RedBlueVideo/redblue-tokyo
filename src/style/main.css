@@ -96,6 +96,7 @@ h1 {
   margin: 2.1rem auto 0.67rem auto;
   line-height: 1.375;
   font-weight: 800;
+  font-family: 'Accord Alternate', 'AccordAlternate', 'Noto Sans', 'Noto Sans CJK JP', 'Noto Sans CJK', 'Noto Sans JP', 'Source Sans Pro', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .motivation {
@@ -314,4 +315,29 @@ nav, .hamburger, audio, .volume {
 
 .godzilla {
   mix-blend-mode: screen;
+}
+
+.language {
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 2;
+  top: 0.75vw;
+  padding: 0.75rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.language a {
+  display: inline-block;
+}
+
+.language a:hover,
+.language a:focus {
+  text-decoration: underline;
+}
+
+.language a:not(.active) {
+  text-decoration: none;
 }
