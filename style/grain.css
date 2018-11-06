@@ -250,7 +250,7 @@ main > * {
   z-index: 2;
 }
 main:after {
-  opacity: 0.75;
+  opacity: 0.5;
   -webkit-animation: grain 5s steps(10) infinite;
   -moz-animation: grain 5s steps(10) infinite;
   -ms-animation: grain 5s steps(10) infinite;
@@ -264,17 +264,4 @@ main:after {
   top: -100%;
   width: 300%;
   z-index: 1;
-}
-.shading b {
-  color: #fff;
-  display: block;
-  font-family: sans-serif;
-  font-size: 75px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  line-height: 850px;
-  position: relative;
-  text-align: center;
-  text-shadow: 0 5px 1px rgba(0, 0, 0, 0.4);
-  text-transform: uppercase;
 }

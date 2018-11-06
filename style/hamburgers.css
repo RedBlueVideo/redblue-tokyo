@@ -25,7 +25,7 @@
   :checked + .hamburger .hamburger-inner,
   :checked + .hamburger .hamburger-inner::before,
   :checked + .hamburger .hamburger-inner::after {
-    background-color: hsla(0, 80%, 45%, 1); }
+    background-color: #B30000; }
 
 .hamburger-box {
   width: 40px;
