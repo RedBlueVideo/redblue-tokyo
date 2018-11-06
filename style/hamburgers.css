@@ -8,7 +8,6 @@
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
-  cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
@@ -19,14 +18,14 @@
   border: 0;
   margin: 0;
   overflow: visible; }
-  .hamburger:hover {
+  .hamburger:hover .hamburger-inner, {
     opacity: 0.7; }
   :checked + .hamburger:hover {
     opacity: 0.7; }
   :checked + .hamburger .hamburger-inner,
   :checked + .hamburger .hamburger-inner::before,
   :checked + .hamburger .hamburger-inner::after {
-    background-color: rgb(10, 10, 10); }
+    background-color: hsla(0, 80%, 45%, 1); }
 
 .hamburger-box {
   width: 40px;
@@ -41,7 +40,7 @@
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 40px;
     height: 4px;
-    background-color: whitesmoke;
+    background-color: hsla(0, 80%, 45%, 1);
     border-radius: 4px;
     position: absolute;
     transition-property: transform;

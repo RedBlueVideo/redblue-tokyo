@@ -16,11 +16,14 @@
         padding: 0;
         margin: 0;
         background-size: cover;
-
         height: 100vh;
-        color: whitesmoke;
+        /* color: white; */
+        /* color: whitesmoke; */
+        /* color: beige; */
+        /* color: seashell; */
+        color: cornsilk;
         text-align: center;
-        font-family: 'Noto Sans', 'Noto Sans CJK JP', 'Noto Sans CJK', 'Roboto', 'Helvetica Neue', sans-serif;
+        font-family: 'Noto Sans', 'Noto Sans CJK JP', 'Noto Sans CJK', 'Noto Sans JP', 'Source Sans Pro', 'Roboto', 'Helvetica Neue', sans-serif;
         line-height: 1.5;
       }
 
@@ -61,8 +64,17 @@
       }
 
       main {
-        max-width: 81%;
-        text-shadow: 1px 2px 2px rgba(0,0,0,0.75);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      main,
+      footer {
+        max-width: 90%;
+        text-shadow: 0.0625em 0.125em 0.125em rgba(0, 0, 0, 0.75);
       }
 
       img {
@@ -71,22 +83,44 @@
 
       h1 {
         font-size: 2.25rem;
-        margin-bottom: 0;
+        font-size: 3.6rem;
+        margin: 1.5rem auto 0.67rem auto;
+        margin: 2.1rem auto 0.67rem auto;
+        line-height: 1.375;
+        font-weight: 800;
       }
 
       .motivation {
         font-size: 1.75rem;
         margin: 0;
         line-height: 1.25;
+        /* white-space: nowrap; */
+        margin-right: -1em;
+        font-size: 2.1rem;
+        font-weight: bold;
       }
 
       p {
         font-size: 1.25rem;
       }
 
+      .wordwrap {
+        display: inline-block;
+      }
+
       .shading {
         /* background-color: hsla(0, 50%, 25%, 0.4); */
         background-color: hsla(0, 0%, 0%, 0.4);
+        /* background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        ); */
+        background: linear-gradient(
+          to bottom,
+          hsla(210, 50%, 50%, 0) 0%,
+          hsla(0, 50%, 50%, 0.4) 100%
+        );
         position: absolute;
         top: 0;
         left: 0;
@@ -100,7 +134,7 @@
       }
 
       a, a:visited {
-        color: #c1272d;
+        color: hsla(0, 100%, 45%, 1);
         /* color: hsl(358, 80%, 76%); */
         /* text-shadow: none; */
       }
@@ -128,6 +162,11 @@
       nav {
         text-align: right;
         color: rgb(10, 10, 10);
+
+      }
+
+      nav, .hamburger {
+        z-index: 3;
       }
 
       .tray {
@@ -135,11 +174,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        /* color: white; */
-        background-color: hsl(200, 20%, 20%);
-        background-color: hsla(200, 20%, 20%, 0.8);
         background-color: whitesmoke;
-        /* background-color: rgba(245, 245, 245, 0.9); */
         padding: 0.75rem;
         width: 29rem;
         max-width: 100vw;
@@ -155,12 +190,15 @@
         position: absolute;
         right: .75vw;
         top: .75vw;
-        z-index: 1;
+        /* outline: inherit; */
       }
 
       .checkbox {
         opacity: 0;
         pointer-events: none;
+        width: 0;
+        height: 0;
+        margin: 0;
       }
 
       :checked ~ .tray {
@@ -184,17 +222,41 @@
       .tray-links > li + li {
         margin-top: 1rem;
       }
+
+      @media only screen and (max-width: 41em) {
+        h1 {
+          font-size: 3.3rem;
+        }
+
+        .middle-dot {
+          display: none;
+        }
+
+        .brand-name,
+        .toukyou-shisha {
+          display: block;
+        }
+
+        .motivation {
+          margin-right: auto;
+          font-size: 1.8rem;
+        }
+      }
     </style>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese" onload="this.rel = 'stylesheet'" />
     <link rel="preload" as="style" href="style/hamburgers.css" onload="this.rel = 'stylesheet'" />
+    <link rel="preload" as="style" href="style/grain.css" onload="this.rel = 'stylesheet'" />
     <noscript>
+      <link rel="preload" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese" />
       <link rel="stylesheet" href="style/hamburgers.css" />
+      <link rel="stylesheet" href="style/grain.css" />
     </noscript>
   </head>
   <body>
     <div class="shading">
       <nav>
         <input id="checkbox" class="checkbox" type="checkbox" />
-        <label for="checkbox" class="hamburger hamburger--collapse" aria-label="メニューをトグルして" title="メニューをトグルして">
+        <label for="checkbox" class="hamburger hamburger--collapse" aria-label="メニューをトグルして" title="メニューをトグルして" role="button" tabindex="-1" aria-expanded="false">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
@@ -209,19 +271,24 @@
         </div>
       </nav>
       <main>
-        <img src="img/redblue-logo--1024-transparent-dropshadow.png" width="128" alt="ロゴ" />
-        <h1>レッドブルー・東京支社</h1>
-        <p class="motivation">いつか、この夢は本当になるでしょうよ。</p>
+        <img src="img/redblue-logo--1024-transparent-dropshadow-3.png" width="192" alt="ロゴ" />
+        <h1><span class="brand-name">レッドブルー</span><span class="middle-dot">・</span><span class="toukyou-shisha">東京支社</span></h1>
+        <p class="motivation"><span><span class="wordwrap">いつか、</span><span class="wordwrap">この</span><span class="wordwrap">夢は</span><span class="wordwrap">本当に</span><span class="wordwrap">なるでしょうよ。</span></span></p>
         <!-- <p class="motivation">いつか、この夢は本当になりますよ。</p> -->
+      </main>
+      <footer>
         <p id="current-time" style="opacity: 0; transition: 1s ease opacity;">東京での現在時刻：
           <time id="datetime" datetime="">
             <span></span>
             <span id="year"></span>年<span id="month"></span>月<span id="day"></span>日
-            <span id="hour"></span>時<span id="minutes"></span>分<span id="seconds"></span>秒
+            <span id="hour"></span>時<span id="minutes"></span>分<span id="seconds"></span>秒 <span id="am" hidden><ruby>午前<rt>ごぜん</rt></ruby></span><span id="pm" hidden><ruby>午後<rt>ごご</rt></ruby></span>
           </time>
         </p>
-      </main>
+      </footer>
     </div>
+    <!-- <audio autoplay loop>
+      <source src="" />
+    </audio> -->
     <script>
       // https://stackoverflow.com/a/46261084/214325
       function getTokyoTime() {
@@ -266,7 +333,18 @@
         }
 
         if ( !$hour.textContent.length || ( seconds >= 59 ) || ( seconds <= 1 ) ) {
-          $hour.textContent = hours;
+          if ( hours >= 12 ) {
+            $hour.textContent = hours - 12;
+            $am.hidden = true;
+            $pm.hidden = false;
+          } else {
+            $am.hidden = false;
+            $pm.hidden = true;
+          }
+
+          if ( hours === 0 ) {
+            $hour.textContent = '12';
+          }
         }
 
         $minutes.textContent = ( minutes >= 10 ) ? minutes : '0' + minutes;
@@ -285,6 +363,8 @@
       var $hour = document.getElementById( 'hour' );
       var $minutes = document.getElementById( 'minutes' );
       var $seconds = document.getElementById( 'seconds' );
+      var $am = document.getElementById( 'am' );
+      var $pm = document.getElementById( 'pm' );
       var $datetime = document.getElementById( 'datetime' );
 
       displayTokyoTime();
