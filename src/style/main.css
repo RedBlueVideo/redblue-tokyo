@@ -7,10 +7,23 @@ body, .shading {
 }
 
 body {
-  background: #1f364f url('../img/riccardo-chiarini-383136-unsplash--high-contrast@0,1875x.jpg') center center no-repeat;
+  background-color: #1f364f;
+  background-image:
+    /* url('../img/godzilla.png'), */
+    url('../img/riccardo-chiarini-383136-unsplash--high-contrast@0,1875x.jpg')
+  ;
+  background-position:
+    /* 80% 40%, */
+    center center
+  ;
+  background-repeat: no-repeat;
   padding: 0;
   margin: 0;
-  background-size: cover;
+  background-size:
+    /* 64px, */
+    cover
+  ;
+  background-blend-mode: exclusion;
   height: 100vh;
   /* color: white; */
   /* color: whitesmoke; */
@@ -36,13 +49,13 @@ body {
 
 @media only screen and (min-width: 1351px) {
   body {
-    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,25x.jpg');
+    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,25x.jpg'), url('img/godzilla.png') center center no-repeat;
   }
 }
 
 @media only screen and (min-width: 2702px) {
   body {
-    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,5x.jpg');
+    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,5x.jpg'), url('img/godzilla.png') center center no-repeat;
   }
 }
 
@@ -157,11 +170,14 @@ summary {
 nav {
   text-align: right;
   color: rgb(10, 10, 10);
-
 }
 
-audio {
+audio, .current-time {
   position: relative;
+}
+
+.current-time {
+  z-index: 2;
 }
 
 nav, .hamburger, audio, .volume {
@@ -261,8 +277,9 @@ nav, .hamburger, audio, .volume {
   /* top: 0; */
   /* left: 0; */
   left: .75vw;
-  /* top: .75vw; */
-  top: .5vw;
+  top: .75vw;
+  /* top: .5vw; */
+  /* top: 0.425vw; */
   padding: 0;
   margin: 0;
   /* -webkit-appearance: none; */
@@ -281,5 +298,20 @@ nav, .hamburger, audio, .volume {
   overflow: hidden;
   display: inline-block;
   line-height: 0;
-  outline: 0;
+  /* outline: 0; */
+
+  /* transition: opacity 0.25s ease; */
+  /* opacity: 0.333333; */
+  color: black;
+  color: hsla(0, 50%, 66.666666%, 1);
+  color: hsla(200, 50%, 50%, 1);
+}
+
+.volume:hover,
+.volume:focus {
+  opacity: 1;
+}
+
+.godzilla {
+  mix-blend-mode: screen;
 }
