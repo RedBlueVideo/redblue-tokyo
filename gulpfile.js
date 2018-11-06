@@ -49,4 +49,11 @@ gulp.task( 'img', ( cb ) => {
   ], cb );
 } );
 
-gulp.task( 'default', [ 'cssmin', 'htmlmin', 'jsmin', 'img' ] );
+gulp.task( 'audio', ( cb ) => {
+  pump( [
+    gulp.src('./src/audio/*.{mp3,wav,flac,aac,ac3}'),
+    gulp.dest('./dist/audio')
+  ], cb );
+} );
+
+gulp.task( 'default', [ 'cssmin', 'htmlmin', 'jsmin', 'img', 'audio' ] );
