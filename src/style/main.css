@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body, .shading {
+  min-height: 480px;
+}
+
 body {
   background: #1f364f url('../img/riccardo-chiarini-383136-unsplash--high-contrast@0,1875x.jpg') center center no-repeat;
   padding: 0;
