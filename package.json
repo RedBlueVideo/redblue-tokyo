@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "apache-server-configs": "^3.0.0",
     "autoprefixer": "^9.3.1",
     "cssnano": "^4.1.7",
     "gulp": "^3.9.1",

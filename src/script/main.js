@@ -1,5 +1,4 @@
 'use strict';
-
 // https://stackoverflow.com/a/46261084/214325
 function getTokyoTime() {
   // create Date object for current location
@@ -62,10 +61,85 @@ function displayTokyoTime() {
   $datetime.setAttribute( 'datetime', tokyoTime.toISOString() );
 }
 
+// Init
 var $html = document.documentElement;
 $html.classList.remove( 'no-js' );
 $html.classList.add( 'js' );
 
+var $hamburger = document.getElementById( 'hamburger' );
+var $hamburgerTarget = document.getElementById( $hamburger.getAttribute( 'aria-controls' ) );
+var $trayLinks = document.getElementById( 'tray-links' );
+
+var KEY_ENTER = 13;
+var KEY_SPACE = 32;
+
+// Accessibility
+function takeTrayLinksOutOfTabOrder() {
+  for ( var i = 0; i < $trayLinks.children.length; i++ ) {
+    var $child = $trayLinks.children[i];
+    $child.children[0].setAttribute( 'tabindex', '-1' );
+  }
+}
+
+function putTrayLinksIntoTabOrder() {
+  for ( var i = 0; i < $trayLinks.children.length; i++ ) {
+    var $child = $trayLinks.children[i];
+    $child.children[0].setAttribute( 'tabindex', '0' );
+  }
+}
+
+function setExpandedMenuState( $button, $toggleTarget ) {
+  var $toggleTarget = ( $toggleTarget || document.getElementById( $button.getAttribute( 'aria-controls' ) ) );
+
+  $button.setAttribute( 'aria-expanded', 'true' );
+  $toggleTarget.setAttribute( 'aria-hidden', 'false' );
+  putTrayLinksIntoTabOrder();
+}
+
+function setCollapsedMenuState( $button, $toggleTarget ) {
+  var $toggleTarget = ( $toggleTarget || document.getElementById( $button.getAttribute( 'aria-controls' ) ) );
+
+  $button.setAttribute( 'aria-expanded', 'false' );
+  $toggleTarget.setAttribute( 'aria-hidden', 'true' );
+  takeTrayLinksOutOfTabOrder();
+}
+
+function hamburgerKeyHandler( event ) {
+  switch ( event.which ) {
+    case KEY_ENTER:
+    case KEY_SPACE: {
+      event.stopPropagation;
+
+      if ( $hamburger.getAttribute( 'aria-expanded' ) === "false" ) {
+        $hamburger.click();
+        $hamburger.focus();
+        setExpandedMenuState( $hamburger, $hamburgerTarget );
+      } else {
+        $hamburger.click();
+        $hamburger.focus();
+        setCollapsedMenuState( $hamburger, $hamburgerTarget );
+      }
+      break;
+    }
+  } //end switch
+
+  return true;
+}
+
+function hamburgerClickHandler( event ) {
+  if ( $hamburger.getAttribute( 'aria-expanded' ) === "false" ) {
+    setExpandedMenuState( $hamburger, $hamburgerTarget );
+  } else {
+    setCollapsedMenuState( $hamburger, $hamburgerTarget );
+  }
+}
+
+takeTrayLinksOutOfTabOrder();
+
+$hamburger.addEventListener( 'keypress', hamburgerKeyHandler );
+$hamburger.addEventListener( 'click', hamburgerClickHandler );
+
+// Date & time
 var $currentTime = document.getElementById( 'current-time' );
 var $year = document.getElementById( 'year' );
 var $month = document.getElementById( 'month' );

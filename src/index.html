@@ -11,7 +11,7 @@
     <link rel="preload" as="style" href="style/hamburgers.css" onload="this.rel = 'stylesheet'" />
     <link rel="preload" as="style" href="style/grain.css" onload="this.rel = 'stylesheet'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese" />
+      <link rel="<styl></styl>esheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,900&amp;subset=japanese" />
       <link rel="stylesheet" href="style/hamburgers.css" />
       <link rel="stylesheet" href="style/grain.css" />
     </noscript>
@@ -20,14 +20,24 @@
     <div class="shading">
       <nav>
         <input id="checkbox" class="checkbox" type="checkbox" />
-        <label for="checkbox" class="hamburger hamburger--collapse" aria-label="メニューをトグルして" title="メニューをトグルして" role="button" tabindex="-1" aria-expanded="false">
+        <label
+          id="hamburger"
+          for="checkbox"
+          class="hamburger hamburger--collapse"
+          aria-label="メニューをトグルして"
+          title="メニューをトグルして"
+          role="button"
+          tabindex="0"
+          aria-controls="tray"
+          aria-expanded="false"
+        >
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
         </label>
-        <div class="tray">
+        <div id="tray" class="tray" aria-hidden="true">
           <h2>ビザのリソース</h2>
-          <ul class="tray-links">
+          <ul id="tray-links" class="tray-links">
             <li><a href="https://asia.nikkei.com/Japan-Update/Japan-eyes-startup-visa-program-to-lure-foreign-businesses" target="_blank" rel="noopener">Japan eyes startup visa program to lure foreign businesses</a></li>
             <!-- <li><a>Bar</a></li> -->
             <!-- <li><a>Baz</a></li> -->
