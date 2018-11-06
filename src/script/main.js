@@ -237,6 +237,7 @@ var $amEigo = document.getElementById( 'am-eigo' );
 var $pmEigo = document.getElementById( 'pm-eigo' );
 var $visaResources = document.getElementById( 'visa-resources' );
 var $middleDot = document.getElementById( 'middle-dot' );
+var $title = document.querySelector( 'title' );
 
 var lang = {
   "BRAND_NAME": {
@@ -285,6 +286,11 @@ var lang = {
   }
 };
 
+lang.TITLE = {
+  "ja": lang.BRAND_NAME.ja + lang.MIDDLE_DOT.ja + lang.BRANCH_NAME.ja,
+  "en": lang.BRAND_NAME.en + lang.MIDDLE_DOT.en + lang.BRANCH_NAME.en
+};
+
 $language.addEventListener( 'click', function ( event ) {
   event.preventDefault();
 
@@ -296,6 +302,7 @@ $language.addEventListener( 'click', function ( event ) {
     case '🇯🇵':
       $html.setAttribute( 'lang', 'ja' );
       $html.setAttribute( 'xml:lang', 'ja' );
+      $title
       $brandName.textContent = lang.BRAND_NAME.ja;
       $branchName.textContent = lang.BRANCH_NAME.ja;
       $currentTimeText.textContent = lang.CURRENT_TIME.ja;
@@ -307,6 +314,7 @@ $language.addEventListener( 'click', function ( event ) {
       $secondsKanji.textContent = lang.SECONDS_KANJI.ja;
       $visaResources.textContent = lang.VISA_RESOURCES.ja;
       $middleDot.textContent = lang.MIDDLE_DOT.ja;
+      $title.textContent = lang.TITLE.ja;
       $motivationEigo.hidden = true;
       $motivationNihongo.hidden = false;
       $amEigo.hidden = true;
@@ -329,6 +337,7 @@ $language.addEventListener( 'click', function ( event ) {
       $secondsKanji.textContent = lang.SECONDS_KANJI.en;
       $visaResources.textContent = lang.VISA_RESOURCES.en;
       $middleDot.textContent = lang.MIDDLE_DOT.en;
+      $title.textContent = lang.TITLE.en;
       $motivationEigo.hidden = false;
       $motivationNihongo.hidden = true;
       $amEigo.hidden = false;
