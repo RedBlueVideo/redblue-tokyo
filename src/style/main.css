@@ -208,7 +208,7 @@ nav, .hamburger, audio, .volume {
   overflow: scroll;
 }
 
-.tray-heading {
+.tray-heading:first-child {
   margin-top: 0;
 }
 
