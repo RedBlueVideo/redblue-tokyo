@@ -76,9 +76,14 @@ var $hamburgerTarget = document.getElementById( $hamburger.getAttribute( 'aria-c
 var $trayLinks = document.getElementById( 'tray-links' );
 var $someday = document.getElementById( 'someday' );
 var $volume = document.getElementById( 'volume' );
+var $nav = document.querySelector( 'nav' );
 
 var KEY_ENTER = 13;
 var KEY_SPACE = 32;
+
+$nav.addEventListener( 'click', function ( event ) {
+  event.stopPropagation();
+} );
 
 // Accessibility
 function takeTrayLinksOutOfTabOrder() {
@@ -126,7 +131,7 @@ function setCollapsedMenuState( $button, $toggleTarget ) {
   }, 0 );
 }
 
-function collapseHamburgerMenu() {
+function collapseHamburgerMenu( event ) {
   if ( $hamburger.getAttribute( 'aria-expanded' ) === 'true' ) {
     $checkbox.checked = false;
     setCollapsedMenuState( $hamburger, $hamburgerTarget );
