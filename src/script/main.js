@@ -73,7 +73,7 @@ $html.classList.add( 'js' );
 var $checkbox = document.getElementById( 'checkbox' );
 var $hamburger = document.getElementById( 'hamburger' );
 var $hamburgerTarget = document.getElementById( $hamburger.getAttribute( 'aria-controls' ) );
-var $trayLinks = document.getElementById( 'tray-links' );
+var $trayLinks = document.querySelectorAll( '.tray-link' );
 var $someday = document.getElementById( 'someday' );
 var $volume = document.getElementById( 'volume' );
 var $nav = document.querySelector( 'nav' );
@@ -87,16 +87,14 @@ $nav.addEventListener( 'click', function ( event ) {
 
 // Accessibility
 function takeTrayLinksOutOfTabOrder() {
-  for ( var i = 0; i < $trayLinks.children.length; i++ ) {
-    var $child = $trayLinks.children[i];
-    $child.children[0].setAttribute( 'tabindex', '-1' );
+  for ( var i = 0; i < $trayLinks.length; i++ ) {
+    $trayLinks[i].setAttribute( 'tabindex', '-1' );
   }
 }
 
 function putTrayLinksIntoTabOrder() {
-  for ( var i = 0; i < $trayLinks.children.length; i++ ) {
-    var $child = $trayLinks.children[i];
-    $child.children[0].setAttribute( 'tabindex', '0' );
+  for ( var i = 0; i < $trayLinks.length; i++ ) {
+    $trayLinks[i].setAttribute( 'tabindex', '0' );
   }
 }
 
