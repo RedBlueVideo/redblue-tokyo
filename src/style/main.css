@@ -219,13 +219,13 @@ nav, .hamburger, audio, .volume {
   /* outline: inherit; */
 }
 
-.checkbox {
+/* .checkbox {
   opacity: 0;
   pointer-events: none;
   width: 0;
   height: 0;
   margin: 0;
-}
+} */
 
 :checked ~ .tray {
   transform: none;
@@ -351,4 +351,9 @@ nav, .hamburger, audio, .volume {
 
 .language a:not(.active) {
   text-decoration: none;
+}
+
+.controls {
+  height: 3.7rem;
+  width: 100%;
 }

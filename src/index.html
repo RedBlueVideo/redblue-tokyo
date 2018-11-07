@@ -19,13 +19,15 @@
   </head>
   <body>
     <div class="shading">
-      <button id="volume" class="volume" data-playing-icon="🔊" data-muted-icon="🔇" tabindex="0">🔇</button>
-      <!-- <div id="language" class="language">
-        <a class="active" href="/ja">🇯🇵</a>
-        <a href="/en">🇺🇸</a>
-      </div> -->
+      <div id="controls" class="controls">
+        <button id="volume" class="volume" data-playing-icon="🔊" data-muted-icon="🔇" tabindex="0">🔇</button>
+        <!-- <div id="language" class="language">
+          <a class="active" href="/ja">🇯🇵</a>
+          <a href="/en">🇺🇸</a>
+        </div> -->
+      </div>
       <nav>
-        <input id="checkbox" class="checkbox" type="checkbox" />
+        <input id="checkbox" class="checkbox" type="checkbox" hidden />
         <label
           id="hamburger"
           for="checkbox"
