@@ -56,4 +56,11 @@ gulp.task( 'audio', ( cb ) => {
   ], cb );
 } );
 
-gulp.task( 'default', [ 'cssmin', 'htmlmin', 'jsmin', 'img', 'audio' ] );
+gulp.task( 'favicon', ( cb ) => {
+  pump( [
+    gulp.src('./src/*.{ico,png}'),
+    gulp.dest('./dist/')
+  ], cb );
+} );
+
+gulp.task( 'default', [ 'cssmin', 'htmlmin', 'jsmin', 'img', 'audio', 'favicon' ] );
