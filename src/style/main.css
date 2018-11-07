@@ -185,7 +185,7 @@ audio, .current-time {
 }
 
 nav, .hamburger, audio, .volume {
-  z-index: 3;
+  z-index: 4;
 }
 
 .tray {
@@ -194,7 +194,8 @@ nav, .hamburger, audio, .volume {
   top: 0;
   right: 0;
   background-color: white;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
+  padding: 2.1rem 0.75rem;
   width: 29rem;
   max-width: 100vw;
   height: 100vh;
@@ -203,6 +204,12 @@ nav, .hamburger, audio, .volume {
   /* border-left: 1px solid hsla(200, 0%, 0%, 1); */
   /* box-shadow: 0 0 2rem inset rgba(0,0,0,0.5); */
   box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+  z-index: 3;
+  overflow: scroll;
+}
+
+.tray-heading {
+  margin-top: 0;
 }
 
 .hamburger {
