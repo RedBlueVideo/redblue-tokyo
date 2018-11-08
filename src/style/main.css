@@ -90,12 +90,23 @@ img {
 }
 
 h1 {
-  font-size: 2.25rem;
-  font-size: 3.6rem;
+  font-size: 3rem;
   margin: 1.5rem auto 0.67rem auto;
   margin: 2.1rem auto 0.67rem auto;
   line-height: 1.375;
   font-weight: 800;
+}
+
+@media only screen and (min-width: 21em) {
+  h1 {
+    font-size: 3.3rem;
+  }
+}
+
+@media only screen and (min-width: 26em) {
+  h1 {
+    font-size: 3.6rem;
+  }
 }
 
 html[lang="en"] h1 {
@@ -250,11 +261,11 @@ nav, .hamburger, audio, .volume {
   margin-top: 1rem;
 }
 
-@media only screen and (max-width: 41em) {
-  h1 {
-    font-size: 3.3rem;
-  }
+.brand-name {
+  white-space: nowrap;
+}
 
+@media only screen and (max-width: 44em) {
   .logo {
     max-width: 40%;
   }
