@@ -49,13 +49,15 @@ body {
 
 @media only screen and (min-width: 1351px) {
   body {
-    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,25x.jpg'), url('img/godzilla.png') center center no-repeat;
+    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,25x.jpg');
+    /* , url('img/godzilla.png') center center no-repeat; */
   }
 }
 
 @media only screen and (min-width: 2702px) {
   body {
-    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,5x.jpg'), url('img/godzilla.png') center center no-repeat;
+    background-image: url('img/riccardo-chiarini-383136-unsplash--high-contrast@0,5x.jpg');
+    /* , url('img/godzilla.png') center center no-repeat; */
   }
 }
 
