@@ -34,7 +34,7 @@ function displayTokyoTime() {
   }
 
   if ( !$month.textContent.length || isCurrentlyLastDay ) {
-    $month.textContent = tokyoTime.getMonth();
+    $month.textContent = tokyoTime.getMonth() + 1;
   }
 
   if ( !$day.textContent.length || ( hours >= 23 ) || ( hours <= 1 ) ) {
