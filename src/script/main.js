@@ -47,6 +47,7 @@ function displayTokyoTime() {
       $am.hidden = true;
       $pm.hidden = false;
     } else {
+      $hour.textContent = hours;
       $am.hidden = false;
       $pm.hidden = true;
     }
